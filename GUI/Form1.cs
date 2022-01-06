@@ -38,12 +38,15 @@ namespace GUI
             else
             {
                 Customer_DTO cus = new Customer_DTO();
-                cus.Id = int.Parse(tbId.Text);
+                cus.Id = tbId.Text;
                 cus.Name = tbName.Text;
 
                 cusBUS.NewCustomer(cus);
 
                 dgvCustomer.Rows.Add(cus.Id, cus.Name);
+
+                tbId.Text = null;
+                tbName.Text = null;
             }
         }
 
@@ -55,7 +58,7 @@ namespace GUI
             if (confirmResult == DialogResult.Yes)
             {
                 Customer_DTO cus = new Customer_DTO();
-                cus.Id = int.Parse(tbId.Text);
+                cus.Id = tbId.Text;
                 cus.Name = tbName.Text;
 
                 cusBUS.DeleteCustomer(cus);
@@ -75,7 +78,7 @@ namespace GUI
             else
             {
                 Customer_DTO cus = new Customer_DTO();
-                cus.Id = int.Parse(tbId.Text);
+                cus.Id = tbId.Text;
                 cus.Name = tbName.Text;
 
                 cusBUS.EditCustomer(cus);

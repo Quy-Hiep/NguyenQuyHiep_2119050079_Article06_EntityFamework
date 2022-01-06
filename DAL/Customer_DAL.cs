@@ -27,8 +27,16 @@ namespace DAL
         }
         public void EditCustomer(Customer_DTO cus)
         {
-            this.Entry(cus).State=EntityState.Modified;
-            this.SaveChanges();
+            var editCustomer = this.Customers.Where(c => c.Id == cus.Id).FirstOrDefault();
+            if (editCustomer != null)
+            {
+                editCustomer.Id= cus.Id;
+                editCustomer.Name = cus.Name;
+                //this.Entry(editCustomer).CurrentValues.SetValues(cus);
+                this.SaveChanges();
+            }
+            //this.Entry(cus).State = EntityState.Modified;
+            //this.SaveChanges();
         }
     }
 }

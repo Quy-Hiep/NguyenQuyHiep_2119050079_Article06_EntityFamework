@@ -13,6 +13,6 @@ namespace DAL
         {
 
         }
-        public System.Data.Entity.DbSet<Customer_DTO> Customers { get; set; }
+        public DbSet<Customer_DTO> Customers { get; set; }
     }
 }
