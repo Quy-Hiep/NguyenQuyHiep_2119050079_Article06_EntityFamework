@@ -78,13 +78,11 @@ namespace GUI
             else
             {
                 Customer_DTO cus = new Customer_DTO();
-                cus.Id = tbId.Text;
                 cus.Name = tbName.Text;
 
                 cusBUS.EditCustomer(cus);
 
                 DataGridViewRow row = dgvCustomer.CurrentRow;
-                row.Cells[0].Value = cus.Id;
                 row.Cells[1].Value = cus.Name;
             }
         }
