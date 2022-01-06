@@ -16,7 +16,8 @@ namespace DAL
         }
         public void DeleteCustomer(Customer_DTO cus)
         {
-            this.Customers.Remove(cus);
+            var deletedCustomer = this.Customers.Where(c => c.Id == cus.Id).FirstOrDefault();
+            this.Customers.Remove(deletedCustomer);
             this.SaveChanges();
         }
         public void NewCustomer(Customer_DTO cus)

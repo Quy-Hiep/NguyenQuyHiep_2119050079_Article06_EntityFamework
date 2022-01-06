@@ -78,7 +78,7 @@ namespace GUI
                 cus.Id = int.Parse(tbId.Text);
                 cus.Name = tbName.Text;
 
-                cusBUS.NewCustomer(cus);
+                cusBUS.EditCustomer(cus);
 
                 DataGridViewRow row = dgvCustomer.CurrentRow;
                 row.Cells[0].Value = cus.Id;

@@ -22,7 +22,7 @@ namespace BUS
         }
         public void DeleteCustomer(Customer_DTO cus)
         {
-            dal.DeleteCustomer(cus);
+                dal.DeleteCustomer(cus);
         }
         public void EditCustomer(Customer_DTO cus)
         {
